@@ -1,0 +1,37 @@
+{% load humanize %}
+<style>
+    #uni_modal .modal-footer {
+        display: none !important
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <dl>
+                <dt>Donor's Name</dt>
+                <dd class="ps-4 fw-bolder text-primary">{{ donation.donor_name }}</dd>
+                <dt>Donor's Gender</dt>
+                <dd class="ps-4 fw-bolder text-primary">{{ donation.donor_gender }}</dd>
+                <dt>Donor's Contact</dt>
+                <dd class="ps-4 fw-bolder text-primary">{{ donation.donor_contact }}</dd>
+                <dt>Donor's Email</dt>
+                <dd class="ps-4 fw-bolder text-primary">{{ donation.donor_email }}</dd>
+                <dt>Donor's Address</dt>
+                <dd class="ps-4 fw-bolder text-primary">{{ donation.donor_address }}</dd>
+            </dl>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <dl>
+                <dt>Blood Group</dt>
+                <dd class="ps-4 fw-bolder text-primary">{{ donation.blood_group }}</dd>
+                <dt>Transfusion/Donation Date</dt>
+                <dd class="ps-4 fw-bolder text-primary">{{ donation.transfusion_date|date:"M d, Y" }}</dd>
+                <dt>Volume</dt>
+                <dd class="ps-4 fw-bolder text-primary">{{ donation.donation_volume|floatformat:2|intcomma }} ml.</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="text-end mt-3">
+        <button class="btn btn-light bg-gradient btn-sm rounded-0 mb-0" type="button" data-bs-dismiss="modal"><i class="material-icons">close</i> Close</button>
+    </div>
+</div>
